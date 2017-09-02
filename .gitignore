@@ -1,0 +1,4 @@
+/logs/
+/src/__pycache__/
+*.bak
+/testenv/
