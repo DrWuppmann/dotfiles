@@ -18,7 +18,8 @@ pac
 # System Utilities
 htop
 nvtop
-
+p7zip p7zip-plugins
+rsync
 
 # Desktop Environment
 i3-gaps-next
@@ -26,19 +27,33 @@ i3lock
 polybar
 
 # Text Editor
-atom
+visual-studio-code
 gvim
+
+# IDE
+jdk7-openjdk
+jdk8-openjdk
+intellij-idea-community-edition
+
+# Git Additions
+hub
 
 # Web Browsers
 chromium
 firefox
 elinks2
 
+# Cloud
+megasync
+
 # Terminal
 zsh
 oh-my-zsh
 rxvt-unicode
 tmux
+
+# Office
+libreoffice-fresh
 
 # Multimedia
 vlc
