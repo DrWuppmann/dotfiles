@@ -1,0 +1,13 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, dont do anything
+[[ $- != *i* ]] && return
+
+PS1='[\u@\h \W]\$ '
+export TZ=localtime
+
+ALIASES=~/dotfiles/config/aliases
+
+test -r $ALIASES && source $ALIASES

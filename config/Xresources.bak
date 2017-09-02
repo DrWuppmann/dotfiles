@@ -1,0 +1,59 @@
+*.foreground:   #f7de27
+*.background:   #101010
+
+*.color0:       #101010
+*.color1:       #b743f2
+*.color2:       #b743f2
+*.color3:       #65c1ff
+*.color4:       #636363
+*.color5:       #4a6aff
+*.color6:       #65c1ff
+*.color7:       #65c1ff
+*.color8:       #f7de27
+*.color9:       #b765e9
+*.color10:      #5d227b
+*.color11:      #8bd0ff
+*.color12:      #ce88f2
+*.color13:      #6297f4
+*.color14:      #8abeb7
+*.color15:      #2e4335
+
+*.cursorColor:  #f7de27
+
+vim.color130: #b743f2
+
+! urxvt
+URxvt.scrollBar: false
+URxvt.font: xft:Inconsolata-g:style=g:bold:pixelsize=16:antialias=true:hinting=true;
+!URxvt.letterSpace: -1
+URxvt.depth: 32
+URxvt.perl-ext-common: default,clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #101010, #b743f2, #b743f2
+rofi.color-normal: #101010, #f7de27, #101010, #b743f2, #101010
+rofi.color-active: #101010, #f7de27, #101010, #b743f2, #101010
+rofi.color-urgent: #5d227b, #f7de27, #5d227b, #b743f2, #101010
+
+rofi.font: Inconsolata-g
+
+rofi.separator-style: solid
+rofi.hide-scrollbar: true
+rofi.bw: 2
+rofi.columns: 1
+rofi.padding: 30
+
+rofi.matching:fuzzy
+
+rofi.fake-transparency: false
+rofi.location: 1 
+rofi.width: 30
+rofi.lines: 59
+rofi.fixed-num-lines: true

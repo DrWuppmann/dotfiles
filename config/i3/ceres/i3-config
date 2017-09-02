@@ -1,0 +1,231 @@
+#
+# i3 config file
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+# Variables {{{
+
+set $alt Mod1
+set $sup Mod4
+
+set $mod Mod4
+
+# color16 Color Variables
+
+set_from_resource $BG 		background #000000	
+set_from_resource $FG		foreground #000000	
+
+set_from_resource $color00	color0 #000000	
+set_from_resource $color01  color1 #000000	
+set_from_resource $color02	color2 #000000	
+set_from_resource $color03	color3 #000000	
+set_from_resource $color04	color4 #000000	
+set_from_resource $color05	color5 #000000	
+set_from_resource $color06	color6 #000000	
+set_from_resource $color07	color7 #000000	
+set_from_resource $color08	color8 #000000	
+set_from_resource $color09	color9 #000000	
+set_from_resource $color10	color10 #000000	
+set_from_resource $color11	color11 #000000	
+set_from_resource $color12	color12 #000000	
+set_from_resource $color13	color13 #000000	
+set_from_resource $color14	color14 #000000	
+set_from_resource $color15	color15 #000000	
+#}}}
+
+# General Settings {{{
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font xft:roboto bold 11
+
+# Boolean settings
+focus_follows_mouse no
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+#}}}
+
+# Keybinds {{{
+# start a terminal
+bindsym $mod+Return exec urxvt
+
+# kill focused window
+bindsym $mod+Shift+Q kill
+
+# start program launcher
+bindsym $mod+d exec rofi -show run 
+
+# move focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# moves focused window
+bindsym $mod+Control+h move left
+bindsym $mod+Control+j move down
+bindsym $mod+Control+k move up
+bindsym $mod+Control+l move right
+
+# split in horizontal orientation
+bindsym $mod+b split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.'c -b 'Yes, exit i3' 'i3-msg exit'"
+
+new_window pixel 2
+hide_edge_borders none
+
+# focus the child container
+#bindsym $mod+d focus child
+#}}}
+
+# Workspaces {{{
+# workspace variables
+set $WS01 "1:[WEB]"
+set $WS02 "3:[FILES]"
+set $WS03 "5:[DEV]"
+set $WS04 "9:[]"
+set $WS05 "7:[]"
+set $WS06 "2:[CHAT]"
+set $WS07 "4:[TERMINAL]"
+set $WS08 "6:[DEV-II]"
+set $WS09 "8:[]"
+set $WS10 "10:[MUSIC]"
+
+# switch to workspace
+bindsym $mod+1 workspace $WS01
+bindsym $mod+2 workspace $WS02
+bindsym $mod+3 workspace $WS03
+bindsym $mod+4 workspace $WS04
+bindsym $mod+5 workspace $WS05
+bindsym $mod+Shift+1 workspace $WS06
+bindsym $mod+Shift+2 workspace $WS07
+bindsym $mod+Shift+3 workspace $WS08
+bindsym $mod+Shift+4 workspace $WS09
+bindsym $mod+Shift+5 workspace $WS10
+
+# move focused container to workspace
+bindsym Control+1 move container to workspace $WS01
+bindsym Control+2 move container to workspace $WS02
+bindsym Control+3 move container to workspace $WS03
+bindsym Control+4 move container to workspace $WS04
+bindsym Control+5 move container to workspace $WS05
+bindsym Control+Shift+1 move container to workspace $WS06
+bindsym Control+Shift+2 move container to workspace $WS07
+bindsym Control+Shift+3 move container to workspace $WS08
+bindsym Control+Shift+4 move container to workspace $WS09
+bindsym Control+Shift+5 move container to workspace $WS10
+#}}}
+
+# Modi {{{
+bindsym $mod+r mode "resize"
+mode "resize" {
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym odiaeresis resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+s mode "system"
+mode "system" {
+    bindsym s exec shutdown 0
+	bindsym r exec reboot
+    bindsym l exec ~/dotfiles/lock.sh; mode "default"
+    bindsym Print exec imgur-screenshot; mode "default"
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+#}}}
+
+# Color config {{{
+bar {
+    status_command python ~/dotfiles/config/i3/mars/pyStat.py
+    strip_workspace_numbers yes
+    tray_output none
+
+    colors {
+        background $BG
+        separator  $FG
+        statusline $FG
+
+        # State             Border	    BG	    Text
+        focused_workspace   $color01	$color01	$BG
+        active_workspace    $color10    $color10	$BG
+        inactive_workspace  $BG		    $BG         $FG
+        urgent_workspace    $FG         $color01	$BG
+        binding_mode        $color10	$color10    $FG
+    }
+}
+
+# Basic color configuration using the color16 variables for windows and borders.
+# Property Name         Border	    BG	        Text	Indicator	Child Border
+client.focused          $FG         $FG     	$BG 	$FG     	$FG
+client.focused_inactive $color01    $color01	$BG	    $color01    $color01
+client.unfocused        $color10    $color10	$BG 	$color10 	$color10
+client.urgent           $FG     	$FG         $BG 	$FG         $FG
+client.placeholder      $color10    $BG         $BG     $BG     	$BG
+client.background       $color05
+#}}}
+
+# Shortcuts {{{
+# Screenshot Shortcut
+bindsym $mod+BackSpace exec imgur-screenshot
+
+# Music Shortcuts
+bindsym $mod+Down exec playerctl play-pause
+bindsym $mod+Right exec playerctl next
+bindsym $mod+Left exec playerctl previous
+bindsym $mod+Up workspace $WS10
+bindsym XF86AudioPlay exec playerctl play-pause
+#}}}
+
+# Autostart {{{
+# Autostart - Driver/Tools
+exec_always --no-startup-id devmon #USB Automount Utility
+#exec_always setxroot -solid "#202020" #Solid background color
+exec_always feh --bg-scale ~/Pictures/Wallpaper/Justin-Maller_Skeletor.jpg #Picture as background
+exec_always dunst -config ~/.dunstrc #Notification Daemon
+exec_always redshift #Reduces eye fatigue at evening/night
+
+#Autostart - Programs
+exec /opt/telegram/Telegram
+exec chromium
+
+#Workspace Assignments
+for_window [class="TelegramDesktop"] move to workspace $WS06
+for_window [class="discord"] move to workspace $WS06
+for_window [class="Spotify"] move to workspace $WS10
+for_window [class="Chromium"] move to workspace $WS01
+for_window [class="Steam"] move to workspace $WS09
+# }}}
+
+# vim:foldmethod=marker:foldlevel=0
