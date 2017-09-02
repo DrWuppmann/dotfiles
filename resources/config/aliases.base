@@ -1,0 +1,16 @@
+### Custom Aliases for bash and zsh
+alias ls='ls -lh --group-directories-first' 
+alias l='ls --group-directories-first'
+alias lsa='ls -Alh --group-directories-first'
+cdls() { cd "$@" && ls; }
+alias cd='cdls'
+alias c='cdls'
+alias ..='cdls ..'
+alias ...='cdls ../..'
+alias ....='cdls ~'
+alias ~='cdls ~'
+alias rm='rm -rIv'
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias bc='bc -l'
+### EOF Base

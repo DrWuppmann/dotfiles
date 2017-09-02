@@ -1,0 +1,45 @@
+# Contains common packages for both systems
+
+# Dependencies
+curl
+wget
+git
+
+# Drivers
+nvidia
+# TODO pulse audio
+compton
+
+#System Essentials
+sudo # TODO user and sudo setup automation
+pacaur # TODO pacaur build automation
+pac
+
+# System Utilities
+htop
+nvtop
+
+
+# Desktop Environment
+i3-gaps-next
+i3lock
+polybar
+
+# Text Editor
+atom
+gvim
+
+# Web Browsers
+chromium
+firefox
+elinks2
+
+# Terminal
+zsh
+oh-my-zsh
+rxvt-unicode
+tmux
+
+# Multimedia
+vlc
+feh

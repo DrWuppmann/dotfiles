@@ -87,8 +87,14 @@ vnoremap > >gv
 " }}}
 
 """ Text Width Indicator {{{
+set textwidth=100
+set wrapmargin=100
 set wrap
+set linebreak
 set nolist
+set fo+=l 	" Do not wrap text when typing
+set colorcolumn=101
+highlight ColorColumn ctermbg=50
 " }}}
 
 """ Line Numbers {{{

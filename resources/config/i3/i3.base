@@ -3,6 +3,8 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# vim:foldmethod=marker:foldlevel=0
+
 # Variables {{{
 
 set $alt Mod1
@@ -104,56 +106,6 @@ hide_edge_borders none
 #bindsym $mod+d focus child
 #}}}
 
-# Workspaces {{{
-# workspace variables
-set $WS1l "1:[WEB]"
-set $WS2l "2:[FILES]"
-set $WS3l "3:[DEV]"
-set $WS4l "4:[GAME]"
-set $WS5l "5:[]"
-set $WS1r "6:[CHAT]"
-set $WS2r "7:[TERMINAL]"
-set $WS3r "8:[DEV]"
-set $WS4r "9:[STEAM]"
-set $WS5r "10:[MUSIC]"
-
-# Monitor assignments
-workspace $WS1l output HDMI-0
-workspace $WS2l output HDMI-0
-workspace $WS3l output HDMI-0
-workspace $WS4l output HDMI-0
-workspace $WS5l output HDMI-0
-workspace $WS1r output DVI-D-0
-workspace $WS2r output DVI-D-0
-workspace $WS3r output DVI-D-0
-workspace $WS4r output DVI-D-0
-workspace $WS5r output DVI-D-0
-
-# switch to workspace
-bindsym $mod+1 workspace $WS1l
-bindsym $mod+2 workspace $WS2l
-bindsym $mod+3 workspace $WS3l
-bindsym $mod+4 workspace $WS4l
-bindsym $mod+5 workspace $WS5l
-bindsym $mod+Shift+1 workspace $WS1r
-bindsym $mod+Shift+2 workspace $WS2r
-bindsym $mod+Shift+3 workspace $WS3r
-bindsym $mod+Shift+4 workspace $WS4r
-bindsym $mod+Shift+5 workspace $WS5r
-
-# move focused container to workspace
-bindsym Control+1 move container to workspace $WS1l
-bindsym Control+2 move container to workspace $WS2l
-bindsym Control+3 move container to workspace $WS3l
-bindsym Control+4 move container to workspace $WS4l
-bindsym Control+5 move container to workspace $WS5l
-bindsym Control+Shift+1 move container to workspace $WS1r
-bindsym Control+Shift+2 move container to workspace $WS2r
-bindsym Control+Shift+3 move container to workspace $WS3r
-bindsym Control+Shift+4 move container to workspace $WS4r
-bindsym Control+Shift+5 move container to workspace $WS5r
-#}}}
-
 # Modi {{{
 bindsym $mod+r mode "resize"
 mode "resize" {
@@ -208,39 +160,4 @@ client.placeholder      $color10    $BG         $BG     $BG     	$BG
 client.background       $color05
 #}}}
 
-# Shortcuts {{{
-# Screenshot Shortcut
-bindsym $mod+BackSpace exec imgur-screenshot
-
-# Music Shortcuts
-bindsym $mod+Down exec playerctl play-pause
-bindsym $mod+Right exec playerctl next
-bindsym $mod+Left exec playerctl previous
-bindsym $mod+Up workspace $WS5r
-bindsym XF86AudioPlay exec playerctl play-pause
-#}}}
-
-# Autostart {{{
-# Autostart - Driver/Tools
-exec_always --no-startup-id devmon #USB Automount Utility
-#exec_always setxroot -solid "#202020" #Solid background color
-exec_always feh --bg-scale ~/Pictures/Wallpaper/Justin-Maller_Skeletor.jpg #Picture as background
-exec_always dunst -config ~/.dunstrc #Notification Daemon
-exec_always redshift #Reduces eye fatigue at evening/night
-
-#Autostart - Programs
-exec /opt/telegram/Telegram
-exec discord
-exec spotify
-exec chromium
-exec steam
-
-#Workspace Assignments
-for_window [class="TelegramDesktop"] move to workspace $WS1r
-for_window [class="discord"] move to workspace $WS1r
-for_window [class="Spotify"] move to workspace $WS5r
-for_window [class="Chromium"] move to workspace $WS1l
-for_window [class="Steam"] move to workspace $WS4r
-# }}}
-
-# vim:foldmethod=marker:foldlevel=0
+# EOF Base

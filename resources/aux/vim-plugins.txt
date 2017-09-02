@@ -1,0 +1,8 @@
+ledger/vim-ledger
+kien/ctrlp.vim
+tpope/vim-fugitive
+tpope/vim-surround
+tpope/vim-commentary
+tpope/vim-unimpaired
+tpope/vim-repeat
+Valloric/YouCompleteMe

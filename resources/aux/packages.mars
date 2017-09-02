@@ -1,0 +1,27 @@
+# Contains packages specific to hostname mars
+ttf-roboto
+ttf-dejavu
+ttf-liberation
+noto-fonts
+adobe-source-code-pro-fonts
+
+htop
+nvtop
+
+i3wm
+polybar
+
+ledger-cli
+ranger
+zathura
+rxvt-unicode
+megasync
+jDownloader
+
+telegram-desktop
+discord
+
+spotify
+
+wine
+steam
