@@ -33,7 +33,7 @@ gvim
 # IDE
 jdk7-openjdk
 jdk8-openjdk
-intellij-idea-community-edition
+netbeans
 
 # Git Additions
 hub
