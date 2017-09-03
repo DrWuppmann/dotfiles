@@ -99,7 +99,9 @@ if args.config or not args.packages:
     FileGenerator.init(confTarget)
     logger.debug("Running FG.ranger")
     FileGenerator.ranger()
+    logger.debug("Running FG.aliases")
     FileGenerator.aliases()
+    logger.debug("Running FG.i3")
     FileGenerator.i3()
 
 # Trigger Package Install Scripts/AUR Building
