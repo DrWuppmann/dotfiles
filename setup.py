@@ -81,17 +81,10 @@ else:
     logger.info("Provided Target: " + hostname)
 
 # Search for files with required extension
-logger.debug("Current Working Directory: " + cwd)
 if args.packages and not args.dry:
-    packageFile = cwd+"/resources/aux/packages."+hostname
-    logger.debug("Looking for package file at: "+ packageFile)
-    if os.path.isfile(packageFile):
-        logger.info("File found, proceeding with installation...")
-        installPackages(packageFile)
-    else:
-        logger.info("File not found!")
-        # TODO Asking User, if script should proceed without installing packages
-    
+    logger.info("Setting up packages...")
+    PackageInstaller.init(hostname)
+    PackageInstaller.run()
 # Trigger FileGenerator accordingly
 if args.config or not args.packages:
     logger.info("Creating config files...")
