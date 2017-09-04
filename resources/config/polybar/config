@@ -1,0 +1,42 @@
+[settings/base]
+font-0 = "Noto Mono:pixelsize=14;weight=bold;0"
+
+[settings/bottom]
+
+[settings/top]
+
+[bar/mars-pt]
+inherit = settings/base
+;Left - Music
+;Center - Time/date
+;Right - Volume, Network
+
+[bar/mars-pb]
+inherit = settings/base
+;Left - Desktops
+;Center - i3 Mode
+;Right - CPU, Ram
+
+[bar/mars-st]
+inherit = settings/base
+;Left - Music
+;Center - Time/date
+;Right - Volume, Network
+
+[bar/mars-sb]
+inherit = settings/base
+;Left - Desktops
+;Center - i3 Mode
+;Right - CPU, Ram
+
+[bar/ceres-t]
+inherit = settings/base
+;Left - Music
+;Center - Time/date
+;Right - Volume, Network, Battery
+
+[bar/ceres-b]
+inherit settings/base
+;Left - Desktops
+;Center - i3 Mode
+;Right - CPU, Ram
