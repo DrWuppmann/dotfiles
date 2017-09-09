@@ -1,0 +1,12 @@
+h	~
+d	~/Documents
+df	~/Documents/Finances
+dfa	~/Documents/Finances/Accounting
+dfc ~/Documents/Finances/Consors
+u	~/Documents/Education/University
+un	~/Documents/Education/University/.currentSemester
+p	~/Programming
+pj	~/Programming/Java
+pp	~/Programming/Python
+m	~/Music
+cfg	~/dotfiles

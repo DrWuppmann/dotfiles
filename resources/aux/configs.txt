@@ -1,0 +1,5 @@
+cfb		~/dotfiles/resources/config/bashrc
+cfz		~/dotfiles/resources/config/zshrc
+cfd		~/dotfiles/resources/config/dunstrc
+cfx		~/dotfiles/resources/config/Xresources
+

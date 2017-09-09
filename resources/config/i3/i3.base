@@ -6,33 +6,38 @@
 # vim:foldmethod=marker:foldlevel=0
 
 # Variables {{{
-
-set $alt Mod1
-set $sup Mod4
+# Alt - Mod1
+# Super - Mod2
 
 set $mod Mod4
 
 # color16 Color Variables
+set_from_resource $fg	foreground	#000000
+set_from_resource $bg	background	#000000
+set_from_resource $bg2	background2	#000000
+set_from_resource $acc1	accent1	#000000
+set_from_resource $acc2	accent2 #000000
+set_from_resource $acc3	accent3	#000000 
 
-set_from_resource $BG 		background #000000	
-set_from_resource $FG		foreground #000000	
-
-set_from_resource $color00	color0 #000000	
+set_from_resource $color00	color0 #000000
 set_from_resource $color01  color1 #000000	
 set_from_resource $color02	color2 #000000	
 set_from_resource $color03	color3 #000000	
 set_from_resource $color04	color4 #000000	
 set_from_resource $color05	color5 #000000	
-set_from_resource $color06	color6 #000000	
-set_from_resource $color07	color7 #000000	
-set_from_resource $color08	color8 #000000	
-set_from_resource $color09	color9 #000000	
-set_from_resource $color10	color10 #000000	
-set_from_resource $color11	color11 #000000	
-set_from_resource $color12	color12 #000000	
-set_from_resource $color13	color13 #000000	
-set_from_resource $color14	color14 #000000	
-set_from_resource $color15	color15 #000000	
+
+set inactive_bg
+set inactive_border
+set inactive_text
+set focused_bg
+set focused_border
+set focused_text
+set active_bg
+set active_border
+set active_text
+set urgent_bg
+set urgent_border
+set urgent_text
 #}}}
 
 # General Settings {{{
