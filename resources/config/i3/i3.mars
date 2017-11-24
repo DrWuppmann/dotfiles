@@ -1,5 +1,5 @@
 
-# Workspaces {{{
+# Workspaces
 set $WS1l "1:[WEB]"
 set $WS2l "2:[FILES]"
 set $WS3l "3:[DEV]"
@@ -10,6 +10,10 @@ set $WS2r "7:[TERMINAL]"
 set $WS3r "8:[DEV]"
 set $WS4r "9:[STEAM]"
 set $WS5r "10:[MUSIC]"
+
+# Output Variables
+set $monL HDMI-0
+set $monR DIV-D-0
 
 # Monitor assignments
 workspace $WS1l output HDMI-0
