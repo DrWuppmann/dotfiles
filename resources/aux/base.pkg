@@ -12,6 +12,11 @@ compton
 #System Essentials
 pac
 
+# User Interface
+i3wm
+dunst
+polybar
+
 # System Utilities
 htop
 nvtop
@@ -19,24 +24,21 @@ p7zip
 p7zip-plugins
 rsync
 
-visual-studio-code
 gvim
 
 # IDE
-jdk7-openjdk
-jdk8-openjdk
-netbeans
+jdk9-openjdk
 
 # Git Additions
 hub
 
 # Web Browsers
 firefox
-fierfox-nightly
+chromium
 elinks2
 
 # Cloud
-megasync
+syncthing
 
 # Terminal
 zsh
@@ -46,6 +48,7 @@ tmux
 
 # Office
 libreoffice-fresh
+texlive-most
 
 # Multimedia
 vlc
