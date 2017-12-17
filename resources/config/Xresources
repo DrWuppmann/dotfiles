@@ -1,20 +1,39 @@
-*.foreground:   #F5F6F7
-*.background:   #303642
-*.background2:	#414A59
-*.accent1:		#5294E2 !Blue
-*.accent2:		#F03A47 !Red
-*.accent3:		#B5CA8D	!Light-Green
+! special
+*.foreground:   #00bb00
+*.background:   #001100
+*.cursorColor:  #00bb00
 
-*.color0:       #F5F6F7
-*.color1:       #303642
-*.color2:       #414A59
-*.color3:       #5294E2
-*.color4:       #F03A47
-*.color5:       #B5CA8D
+! black
+*.color0:       #001100
+*.color8:       #007700
 
-*.cursorColor:  #f7de27
+! red
+*.color1:       #007700
+*.color9:       #007700
 
-vim.color130: #b743f2
+! green
+*.color2:       #00bb00
+*.color10:      #00bb00
+
+! yellow
+*.color3:       #007700
+*.color11:      #007700
+
+! blue
+*.color4:       #009900
+*.color12:      #009900
+
+! magenta
+*.color5:       #00bb00
+*.color13:      #00bb00
+
+! cyan
+*.color6:       #005500
+*.color14:      #005500
+
+! white
+*.color7:       #00bb00
+*.color15:      #00ff00
 
 ! urxvt
 URxvt.scrollBar: false

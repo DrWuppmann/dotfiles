@@ -1,9 +1,22 @@
-# If not running interactively, don't do anything
+#If not running interactively, dont do anything
 [[ $- != *i* ]] && return
 
 PS1='[\u@\h \W]\$ '
 export TZ=localtime
 
+alias l='ls --group-directories-first'
+alias ls='ls -lh --group-directories-first'
+alias lsa='ls -Alh --group-directories-first'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ~='cd ~'
+
+alias rm='rm- rIv'
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias bc='bc -l' #bc Basic Calculator
+
 ALIASES=${PWD}/../generated/aliases
+
 
 test -r $ALIASES && source $ALIASES
