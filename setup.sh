@@ -5,40 +5,32 @@
 SCRIPT=$(readlink -f "$0")
 BASEDIR=$(dirname $SCRIPT)
 
-createAliases ()
-{
-echo "Adding shortcuts to Aliases..."
-#cp ${BASEDIR}/resources/config/aliases.base ~/.aliases
-while read -r line || [[ -n "$line" ]]; do
-	echo "Line: $line"
-done < "${BASEDIR}/resources/aux/shortcuts.txt"
-}
-
 createi3Config ()
 {# Copy Config and add specific config
 mkdir -p ~/.config/i3
-cp ${BASEDIR}/resources/config/i3/i3.base ~/.config/i3/config
-cat ${BASEDIR}/resources/config/i3/i3.
+cp ${BASEDIR}/resources/config/i3/i3.mars ~/.config/i3/config
 
 }
 
 createPolybarConfig ()
-{# Copy Base File and Launch Script
+{
+	# Copy Base File and Launch Script
 
-}
-
-createRangerConfig ()
-{# Copy Base Config
-
-
-# Add shortcuts from files
 }
 
 vimSetup ()
-{
-# Copy Config
-
-# Install Plugins
+{	
+	#Copy Config
+	cp ${BASEDIR}/resources/config/vimrc ~/.vimrc
+	#Setup Pathogen Plugin Manager
+	mkdir -p ~/.vim/autoload ~/.vim/bundle
+	curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.po/pathogen.vim
+	# Install Plugins
+	cd ~/.vim/bundle
+	for plugin in $(cat ${BASEDIR}/resources/aux/vim-plugins.txt); do
+		git clone "https://github.com/${plugin}";
+	done
+	cd ${BASEDIR}
 }
 
 #Install Dependencies
