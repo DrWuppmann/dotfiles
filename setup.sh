@@ -5,60 +5,51 @@
 SCRIPT=$(readlink -f "$0")
 BASEDIR=$(dirname $SCRIPT)
 
-createi3Config ()
-{# Copy Config and add specific config
+# i3 config
+echo "Copying i3 config..."
 mkdir -p ~/.config/i3
-cp ${BASEDIR}/resources/config/i3/i3.mars ~/.config/i3/config
+ln ${BASEDIR}/resources/config/i3/config.mars ~/.config/i3/config
 
-}
 
-createPolybarConfig ()
-{
-	# Copy Base File and Launch Script
 
-}
+# vim config
+echo "Copying vim config..."
+ln ${BASEDIR}/resources/config/vimrc ~/.vimrc
 
-vimSetup ()
-{	
-	#Copy Config
-	cp ${BASEDIR}/resources/config/vimrc ~/.vimrc
-	#Setup Pathogen Plugin Manager
-	mkdir -p ~/.vim/autoload ~/.vim/bundle
-	curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.po/pathogen.vim
-	# Install Plugins
-	cd ~/.vim/bundle
-	for plugin in $(cat ${BASEDIR}/resources/aux/vim-plugins.txt); do
-		git clone "https://github.com/${plugin}";
-	done
-	cd ${BASEDIR}
-}
+#Setup Pathogen Plugin Manager
+echo "Setting up vim pathogen..."
+mkdir -p ~/.vim/autoload ~/.vim/bundle
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.po/pathogen.vim
+
+# Install Plugins
+echo "Installing Plugins..."
+cd ~/.vim/bundle
+for plugin in $(cat ${BASEDIR}/resources/aux/vim-plugins.txt); do
+	git clone "https://github.com/${plugin}";
+done
+cd ${BASEDIR}
 
 #Install Dependencies
 echo "Installing pacaur..."
-#source ${BASEDIR}/resources/aux/pacaur-setup.sh
+source ${BASEDIR}/resources/aux/pacaur-setup.sh
 
+# Installing packages
 echo "Installing Dependencies via pacaur..."
-pacaur --needed --no-confirm -S - < "$(BASEDIR)/resources/aux/dependencies.pkg"
+pacaur --needed --no-confirm -S - < "${BASEDIR}/resources/aux/deps"
+echo "Installing base packages..."
+pacaur --needed --no-confirm -S - < "${BASEDIR}/resources/aux/base"
+echo "Installing system specific packages..."
+pacaur --needed --no-confirm -S - < "${BASEDIR}/resources/aux/mars.pkg"
 
+# Other config files
 echo "Copying xinitrc..."
-#cp ${BASEDIR}/resources/config/xinitrc ~/.xinitrc
+ln ${BASEDIR}/resources/config/xinitrc ~/.xinitrc
 echo "Copying bash Config..."
-#cp ${BASEDIR}/resources/config/bashrc ~/.bashrc
+ln ${BASEDIR}/resources/config/bashrc ~/.bashrc
 echo "Copying zsh Config..."
-#cp ${BASEDIR}/resources/config/zshrc ~/.zshrc
-echo "Creating dunst config directory..."
-#mkdir -p ~/.config/dunst/
+ln ${BASEDIR}/resources/config/zshrc ~/.zshrc
 echo "Copying Dunst Config..."
-#cp ${BASEDIR}/resources/config/dunstrc ~/.config/dunst/dunstrc
-
-createAliases
-createi3Config
-createPolybarConfig
-createRangerConfig
-vimSetup
-
-# Copy Display Scripts
-
-# System Reboot
+mkdir -p ~/.config/dunst/
+ln ${BASEDIR}/resources/config/dunstrc ~/.config/dunst/dunstrc
 
 echo "Finished!"
